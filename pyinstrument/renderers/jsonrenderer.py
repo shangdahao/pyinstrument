@@ -19,6 +19,8 @@ class JSONRenderer(Renderer):
 
         property_decls = []
         property_decls.append(u'"function": %s' % encode_str(frame.function))
+        import logging
+        logging.warning(f'frame file_path: {frame.file_path}, file_path_short: {frame.file_path_short}')
         property_decls.append(u'"file_path_short": %s' % encode_str(frame.file_path_short))
         property_decls.append(u'"file_path": %s' % encode_str(frame.file_path))
         property_decls.append(u'"line_no": %d' % frame.line_no)
